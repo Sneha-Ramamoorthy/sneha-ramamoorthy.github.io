@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sneha Ramamoorthy — Finance & Analytics Professional</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --bg:#0d0d0f;--bg2:#141416;--bg3:#1a1a1e;
+    --accent:#c8a96e;--accent2:#e8c98e;
+    --text:#e8e6e1;--muted:#8a8680;--border:#2a2a30;
+    --card:#16161a;
+  }
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7}
+  a{color:inherit;text-decoration:none}
+
+  nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(13,13,15,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 5%}
+  .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--accent)}
+  .nav-links{display:flex;gap:2rem;list-style:none}
+  .nav-links a{font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);transition:color 0.2s}
+  .nav-links a:hover{color:var(--accent)}
+
+  section{padding:100px 5%;max-width:1100px;margin:0 auto}
+  .section-label{font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:0.5rem}
+  h2{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:400;margin-bottom:2.5rem;line-height:1.2}
+  h3{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:400}
+
+  /* HERO */
+  #hero{min-height:100vh;display:flex;align-items:center;padding-top:80px;max-width:100%;padding-left:8%;padding-right:8%}
+  .hero-inner{max-width:1100px;margin:0 auto;width:100%}
+  .hero-tag{display:inline-block;font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);padding:6px 16px;border-radius:20px;margin-bottom:2rem}
+  .hero-name{font-family:'Playfair Display',serif;font-size:clamp(3rem,7vw,5.5rem);font-weight:400;line-height:1.05;margin-bottom:1.5rem}
+  .hero-name span{color:var(--accent)}
+  .hero-sub{font-size:1.1rem;color:var(--muted);max-width:600px;margin-bottom:3rem;font-weight:300}
+  .btn-group{display:flex;gap:1rem;flex-wrap:wrap}
+  .btn{display:inline-block;padding:14px 32px;border-radius:2px;font-size:0.88rem;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;font-family:'DM Sans',sans-serif}
+  .btn-primary{background:var(--accent);color:#0d0d0f;font-weight:500}
+  .btn-primary:hover{background:var(--accent2)}
+  .btn-outline{border:1px solid var(--border);color:var(--text)}
+  .btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+  .scroll-hint{margin-top:5rem;display:flex;align-items:center;gap:1rem;color:var(--muted);font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase}
+  .scroll-line{width:60px;height:1px;background:var(--muted)}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1fr 2fr;gap:5rem;align-items:start}
+  .about-avatar{aspect-ratio:1;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:5rem;color:var(--accent);max-width:280px}
+  .about-text p{color:var(--muted);margin-bottom:1.2rem;font-weight:300}
+  .about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;padding-top:2.5rem;border-top:1px solid var(--border)}
+  .stat-num{font-family:'Playfair Display',serif;font-size:2.2rem;color:var(--accent);line-height:1}
+  .stat-label{font-size:0.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-top:4px}
+
+  /* SKILLS */
+  #skills{background:var(--bg2);max-width:100%;padding-left:8%;padding-right:8%}
+  #skills .inner{max-width:1100px;margin:0 auto}
+  .skills-cols{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+  .skills-group-title{font-size:0.78rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--accent);margin-bottom:1.5rem}
+  .skill-item{margin-bottom:1.4rem}
+  .skill-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+  .skill-name{font-size:0.9rem;font-weight:500}
+  .skill-pct{font-size:0.78rem;color:var(--muted)}
+  .skill-bar-wrap{height:2px;background:var(--border)}
+  .skill-bar{height:100%;background:var(--accent)}
+
+  /* EXPERIENCE */
+  .exp-item{border:1px solid var(--border);background:var(--card);padding:2rem;margin-bottom:1.5rem;transition:border-color 0.2s}
+  .exp-item:hover{border-color:var(--accent)}
+  .exp-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.3rem}
+  .exp-role{font-size:1.1rem;font-weight:500}
+  .exp-date{font-size:0.8rem;color:var(--accent);letter-spacing:0.06em}
+  .exp-company{font-size:0.9rem;color:var(--muted);margin-bottom:0.3rem}
+  .exp-client{font-size:0.82rem;color:var(--accent);opacity:0.7;margin-bottom:1rem}
+  .exp-bullets{list-style:none;display:flex;flex-direction:column;gap:6px}
+  .exp-bullets li{font-size:0.88rem;color:var(--muted);padding-left:1.2rem;position:relative;font-weight:300}
+  .exp-bullets li::before{content:'—';position:absolute;left:0;color:var(--accent)}
+
+  /* EDUCATION */
+  #education{background:var(--bg2);max-width:100%;padding-left:8%;padding-right:8%}
+  #education .inner{max-width:1100px;margin:0 auto}
+  .timeline{position:relative;padding-left:2rem}
+  .timeline::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:1px;background:var(--border)}
+  .timeline-item{position:relative;padding-bottom:3rem}
+  .timeline-item::before{content:'';position:absolute;left:-2rem;top:8px;width:9px;height:9px;border-radius:50%;border:1px solid var(--accent);background:var(--accent)}
+  .timeline-date{font-size:0.78rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);margin-bottom:0.4rem}
+  .timeline-degree{font-size:1.05rem;font-weight:500;margin-bottom:0.2rem}
+  .timeline-school{font-size:0.88rem;color:var(--muted)}
+  .timeline-cgpa{font-size:0.82rem;color:var(--accent);margin-top:4px}
+
+  /* CERTIFICATIONS */
+  .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}
+  .cert-card{background:var(--card);border:1px solid var(--border);padding:1.4rem;transition:border-color 0.2s}
+  .cert-card:hover{border-color:var(--accent)}
+  .cert-icon{font-size:1.4rem;margin-bottom:0.7rem}
+  .cert-name{font-size:0.92rem;font-weight:500;margin-bottom:0.3rem}
+  .cert-issuer{font-size:0.8rem;color:var(--muted)}
+
+  /* PROJECT */
+  .project-box{background:var(--card);border:1px solid var(--border);padding:2rem;transition:border-color 0.2s}
+  .project-box:hover{border-color:var(--accent)}
+  .project-tag{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);margin-bottom:0.5rem}
+  .project-title{font-size:1.15rem;font-weight:500;margin-bottom:0.8rem}
+  .project-desc{font-size:0.88rem;color:var(--muted);font-weight:300;line-height:1.7}
+  .project-tags{display:flex;gap:0.6rem;flex-wrap:wrap;margin-top:1.2rem}
+  .tag-pill{font-size:0.72rem;padding:4px 12px;border:1px solid var(--border);color:var(--muted);border-radius:20px;letter-spacing:0.06em}
+
+  /* CONTACT */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem}
+  .contact-info p{color:var(--muted);font-weight:300;margin-bottom:2rem}
+  .contact-detail{display:flex;align-items:center;gap:12px;margin-bottom:1rem;font-size:0.9rem}
+  .contact-detail-icon{width:36px;height:36px;background:rgba(200,169,110,0.08);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:0.9rem;flex-shrink:0}
+  .social-links{display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap}
+  .social-link{padding:10px 20px;border:1px solid var(--border);font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;transition:all 0.2s;color:var(--muted)}
+  .social-link:hover{border-color:var(--accent);color:var(--accent)}
+  .contact-form{display:flex;flex-direction:column;gap:1.2rem}
+  .form-group{display:flex;flex-direction:column;gap:6px}
+  .form-label{font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted)}
+  .form-input{background:var(--card);border:1px solid var(--border);color:var(--text);padding:12px 16px;font-family:'DM Sans',sans-serif;font-size:0.9rem;outline:none;transition:border-color 0.2s}
+  .form-input:focus{border-color:var(--accent)}
+  .form-input::placeholder{color:#3a3a42}
+  textarea.form-input{resize:vertical;min-height:120px}
+  .form-btn{align-self:flex-start;background:var(--accent);color:#0d0d0f;border:none;padding:14px 36px;font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;cursor:pointer;transition:background 0.2s}
+  .form-btn:hover{background:var(--accent2)}
+
+  footer{border-top:1px solid var(--border);padding:2.5rem 8%;text-align:center;color:var(--muted);font-size:0.82rem}
+
+  @media(max-width:768px){
+    .about-grid,.contact-grid,.skills-cols{grid-template-columns:1fr}
+    .about-avatar{display:none}
+    h2{font-size:1.8rem}
+    .exp-header{flex-direction:column}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo">Sneha R.</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div id="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Open to Opportunities</div>
+    <div class="hero-name">Sneha<br><span>Ramamoorthy</span></div>
+    <p class="hero-sub">Finance &amp; Analytics Professional with 3+ years of experience in Accounts Receivable, dispute resolution, and financial operations — supporting global clients across US, ASEAN, and EMEIA regions.</p>
+    <div class="btn-group">
+      <a href="#experience" class="btn btn-primary">View Experience</a>
+      <a href="#contact" class="btn btn-outline">Get In Touch</a>
+    </div>
+    <div class="scroll-hint">
+      <div class="scroll-line"></div>
+      Scroll to explore
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-avatar">SR</div>
+    <div class="about-text">
+      <div class="section-label">About Me</div>
+      <h2>Finance Meets<br>Analytics</h2>
+      <p>I'm Sneha Ramamoorthy, an accounting and finance professional based in India with over 3 years of hands-on experience in Accounts Receivable, dispute resolution, and financial operations for global clients.</p>
+      <p>Currently working as a Senior Process Executive at Infosys BPM, I serve Ernst &amp; Young's Global Delivery Services team — handling receivables, GL clearing, bank reconciliations, and SLA-driven compliance.</p>
+      <p>I hold an MBA in Business Intelligence &amp; Analytics (CGPA 9.1) from JAIN University, complementing my finance expertise with data skills in Power BI, Python, and SQL.</p>
+      <div class="about-stats">
+        <div><div class="stat-num">3+</div><div class="stat-label">Years Exp.</div></div>
+        <div><div class="stat-num">3</div><div class="stat-label">Companies</div></div>
+        <div><div class="stat-num">9.1</div><div class="stat-label">MBA CGPA</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<div id="skills">
+  <section class="inner">
+    <div class="section-label">What I Bring</div>
+    <h2>Skills &amp; Expertise</h2>
+    <div class="skills-cols">
+      <div>
+        <div class="skills-group-title">Technical Skills</div>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">SAP FI</span><span class="skill-pct">90%</span></div>
+          <div class="skill-bar-wrap"><div class="skill-bar" style="width:90%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">Microsoft Excel (VLOOKUP, Pivot Tables)</span><span class="skill-pct">95%</span></div>
+          <div class="skill-bar-wrap"><div class="skill-bar" style="width:95%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">Microsoft Power BI</span><span class="skill-pct">70%</span></div>
+          <div class="skill-bar-wrap"><div class="skill-bar" style="width:70%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">Tally ERP / QuickBooks / Zoho Books</span><span class="skill-pct">85%</span></div>
+          <div class="skill-bar-wrap"><div class="skill-bar" style="width:85%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">Python &amp; R (Basic)</span><span class="skill-pct">55%</span></div>
+          <div class="skill-bar-wrap"><div class="skill-bar" style="width:55%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">SQL for Data Analysis</span><span class="skill-pct">65%</span></div>
+          <div class="skill-bar-wrap"><div class="skill-bar" style="width:65%"></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="skills-group-title">Core Finance Skills</div>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">Accounts Receivable (AR) Management</span><span class="skill-pct">95%</span></div>
+          <div class="skill-bar-wrap"><div class="skill-bar" style="width:95%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">Dispute Resolution &amp; Deduction Analysis</span><span class="skill-pct">90%</span></div>
+          <div class="skill-bar-wrap"><div class="skill-bar" style="width:90%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">Bank Reconciliation &amp; GL Clearing</span><span class="skill-pct">90%</span></div>
+          <div class="skill-bar-wrap"><div class="skill-bar" style="width:90%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">Financial Reporting &amp; Documentation</span><span class="skill-pct">85%</span></div>
+          <div class="skill-bar-wrap"><div class="skill-bar" style="width:85%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">SLA Management &amp; Process Compliance</span><span class="skill-pct">92%</span></div>
+          <div class="skill-bar-wrap"><div class="skill-bar" style="width:92%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">Stakeholder Communication</span><span class="skill-pct">88%</span></div>
+          <div class="skill-bar-wrap"><div class="skill-bar" style="width:88%"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Career Journey</div>
+  <h2>Work Experience</h2>
+
+  <div class="exp-item">
+    <div class="exp-header">
+      <div class="exp-role">Senior Process Executive</div>
+      <div class="exp-date">Apr 2025 — Present</div>
+    </div>
+    <div class="exp-company">Infosys BPM</div>
+    <div class="exp-client">Client: Ernst &amp; Young Global Delivery Services</div>
+    <ul class="exp-bullets">
+      <li>Managed accounts receivable and cash application processes to improve working capital accuracy and reduce outstanding balances.</li>
+      <li>Coordinated with cross-functional teams and client stakeholders to resolve accounting queries within SLA timelines.</li>
+      <li>Executed financial data validation and reconciliation activities ensuring 100% compliance with internal audit controls.</li>
+      <li>Tracked assigned tasks and deliverables to meet agreed service level agreements (SLAs).</li>
+      <li>Supported operational activities including GL clearing, refund processing, and bank reconciliations.</li>
+      <li>Assisted in VAT and corporate tax process support activities under defined guidelines.</li>
+    </ul>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-header">
+      <div class="exp-role">Dispute Analyst (Contract)</div>
+      <div class="exp-date">Jul 2024 — Dec 2024</div>
+    </div>
+    <div class="exp-company">Bosch Global Software Technologies (Klaus IT Solutions)</div>
+    <div class="exp-client">Client: PTNA Power Tools North America — BOSCH</div>
+    <ul class="exp-bullets">
+      <li>Investigated and resolved customer deduction disputes using SAP and Excel, reducing aged receivables and improving recovery rates.</li>
+      <li>Prepared detailed deduction reports to track trends and support dispute management.</li>
+      <li>Provided analytical inputs supporting reporting activities for Bosch Power Tools North America and Vertex tax projects.</li>
+    </ul>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-header">
+      <div class="exp-role">Accounts Executive</div>
+      <div class="exp-date">Oct 2022 — Apr 2024</div>
+    </div>
+    <div class="exp-company">Getify Business Services Private Limited</div>
+    <ul class="exp-bullets">
+      <li>Managed end-to-end AP, AR, and bank reconciliation processes supporting monthly financial closure activities.</li>
+      <li>Supported month-end and year-end closing processes, including GST and TDS filings.</li>
+      <li>Conducted structured payment follow-ups, reducing overdue receivables cycle time.</li>
+      <li>Assisted in HR-related operational tasks including ESIC, EPF registration, payroll inputs, and digital documentation.</li>
+      <li>Performed cost center analysis and turnover reporting using GoFrugal and GoAct Retail Reporting tools.</li>
+    </ul>
+  </div>
+
+  <!-- PROJECT -->
+  <div class="section-label" style="margin-top:3rem">Academic Project</div>
+  <div class="project-box" style="margin-top:1rem">
+    <div class="project-tag">Research &amp; Analytics</div>
+    <div class="project-title">Consumer Preference Analysis — Organic Food Products</div>
+    <div class="project-desc">Conducted survey research with 300 respondents using Google Forms to understand organic food purchasing behaviour. Applied ANOVA statistical methodology to analyze consumer purchasing preferences and generated data-driven insights on organic product consumption patterns.</div>
+    <div class="project-tags">
+      <span class="tag-pill">Google Forms</span>
+      <span class="tag-pill">ANOVA</span>
+      <span class="tag-pill">Statistical Analysis</span>
+      <span class="tag-pill">R Programming</span>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<div id="education">
+  <section class="inner">
+    <div class="section-label">Academic Background</div>
+    <h2>Education</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">2023 — 2025</div>
+        <div class="timeline-degree">Master of Business Administration — Business Intelligence &amp; Analytics</div>
+        <div class="timeline-school">JAIN Deemed to be University, Bangalore, Karnataka</div>
+        <div class="timeline-cgpa">CGPA: 9.1 / 10</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2019 — 2022</div>
+        <div class="timeline-degree">Bachelor of Commerce — Accounting and Finance</div>
+        <div class="timeline-school">Sri Ramakrishna College of Arts and Science, Coimbatore, Tamil Nadu</div>
+        <div class="timeline-cgpa">CGPA: 7.1 / 10</div>
+      </div>
+    </div>
+
+    <!-- CERTIFICATIONS -->
+    <div class="section-label" style="margin-top:3rem;margin-bottom:1rem">Certifications</div>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="cert-icon">&#9670;</div>
+        <div class="cert-name">Power BI Job Simulation</div>
+        <div class="cert-issuer">PwC Switzerland — Forage</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">&#9670;</div>
+        <div class="cert-name">SQL for Data Analysis</div>
+        <div class="cert-issuer">LinkedIn Learning</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">&#9670;</div>
+        <div class="cert-name">Introduction to Python Programming</div>
+        <div class="cert-issuer">Dataquest</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Get In Touch</div>
+  <h2>Let's Connect</h2>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <p>I'm open to new opportunities in finance, accounts receivable, analytics, or related roles. Feel free to reach out via email or connect with me on LinkedIn.</p>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">&#9993;</div>
+        <a href="mailto:snehaa1304@gmail.com" style="color:var(--accent)">snehaa1304@gmail.com</a>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">&#9742;</div>
+        <span>+91 6369126881</span>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">&#9679;</div>
+        <span>India</span>
+      </div>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/sneha-ramamoorthy" target="_blank" class="social-link">LinkedIn</a>
+      </div>
+    </div>
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <div class="form-group">
+        <label class="form-label">Your Name</label>
+        <input type="text" class="form-input" placeholder="John Doe">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email Address</label>
+        <input type="email" class="form-input" placeholder="john@example.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Subject</label>
+        <input type="text" class="form-input" placeholder="Job Opportunity / Collaboration">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Message</label>
+        <textarea class="form-input" placeholder="Hello Sneha, I'd like to connect regarding..."></textarea>
+      </div>
+      <button type="submit" class="form-btn">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>Designed &amp; built by <strong>Sneha Ramamoorthy</strong> &mdash; &copy; 2026. All rights reserved.</p>
+</footer>
+
+<script>
+function handleSubmit(e){
+  e.preventDefault();
+  alert('Thank you for reaching out! Sneha will get back to you soon.\n\nTip: To make this form actually send emails, sign up free at formspree.io and add your form endpoint.');
+}
+</script>
+</body>
+</html>
