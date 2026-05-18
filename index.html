@@ -169,9 +169,59 @@
 
 <!-- ABOUT -->
 <section id="about">
+  <style>
+    .about-grid {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      padding: 40px;
+    }
+
+    .about-avatar {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .about-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .about-stats {
+      display: flex;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .stat-num {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: gray;
+    }
+  </style>
+
   <div class="about-grid">
-   <div class="about-avatar">
-  <img src="Sneha.jpg" alt="Sneha Ramamoorthy" />
+
+    <!-- Photo -->
+    <div class="about-avatar">
+      <img src="Sneha.jpg" alt="Sneha Ramamoorthy" />
+    </div>
+
+    <!-- Text -->
+    <div class="about-text">
       <div class="section-label">About Me</div>
       <h2>Finance Meets<br>Analytics</h2>
       <p>I'm Sneha Ramamoorthy, an accounting and finance professional based in India with over 3 years of hands-on experience in Accounts Receivable, dispute resolution, and financial operations for global clients.</p>
@@ -183,9 +233,9 @@
         <div><div class="stat-num">9.1</div><div class="stat-label">MBA CGPA</div></div>
       </div>
     </div>
+
   </div>
 </section>
-
 <!-- SKILLS -->
 <div id="skills">
   <section class="inner">
